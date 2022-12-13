@@ -1,0 +1,408 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8">
+  <title>E-commerce Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/product.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <script src="./js/query.js"></script>
+<style>
+  .alert.alert-success
+  {
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+    display: none;
+  }
+  
+</style>
+</head>
+<body>
+  <div class="alert alert-success">
+    <p class="text-success">Item Added</p>
+  </div>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">E-commerce</label>
+    <ul>
+      <li><a class="active" href="./Index.html">Home</a></li>
+      <li><a href="./htmlpages/about.html">About</a></li>
+      <li><a href="./htmlpages/contactus.html">Contact Us</a></li>
+      <li><a href="./htmlpages/cart.html">Cart</a></li>
+    </ul>
+  </nav>
+  <section class="carousel">
+    <button class="slider-button slider-button-prev" data-slide-direction="prev">←</button>
+    <button class="slider-button slider-button-next" data-slide-direction="next">→</button>
+    <ul class="slides">
+      <li class="slide" data-active-slide="true">
+        <img src="./images/banner1.jpg" alt="Nature Image #1">
+      </li>
+      <li class="slide">
+        <img src="./images/banner2.jpg" alt="Nature Image #2">
+      </li>
+      <li class="slide">
+        <img src="./images/banner3.jpg" alt="Nature Image #3">
+      </li>
+    </ul>
+    <div class="slides-circles">
+      <div data-active-slide="true"></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+<!-- Filter Products start  -->
+<!-- <div class="row" id="search">
+<form id="search-form" action="" method="POST" enctype="multipart/form-data">
+  <div class="form-group col-xs-9">
+    <input class="form-control" type="text" placeholder="Search" />
+  </div>
+  <div class="form-group col-xs-3">
+    <button type="submit" class="btn btn-block btn-primary">Search</button>
+  </div>
+</form>
+</div>
+<div class="row" id="filter">
+<form>
+  <div class="form-group col-sm-3 col-xs-6">
+    <select data-filter="make" class="filter-make filter form-control">
+      <option value="">Select Make</option>
+      <option value="">Show All</option>
+    </select>
+  </div>
+  <div class="form-group col-sm-3 col-xs-6">
+    <select data-filter="model" class="filter-model filter form-control">
+      <option value="">Select Model</option>
+      <option value="">Show All</option>
+    </select>
+  </div>
+  <div class="form-group col-sm-3 col-xs-6">
+    <select data-filter="type" class="filter-type filter form-control">
+      <option value="">Select Type</option>
+      <option value="">Show All</option>
+    </select>
+  </div>
+  <div class="form-group col-sm-3 col-xs-6">
+    <select data-filter="price" class="filter-price filter form-control">
+      <option value="">Select Price Range</option>
+      <option value="">Show All</option>
+    </select>
+  </div>
+</form>
+</div> -->
+<!-- Filter Products end -->
+<div class="btns">
+  <button type="button" data-menu="all">All</button>
+  <button type="button" data-menu="TShirts">T-Shirts</button>
+  <button type="button" data-menu="Shirts">Shirts</button>
+  <button type="button" data-menu="Jackets">Jackets</button>
+  <button type="button" data-menu="hoddies">hoddies</button>
+  <button type="button" data-menu="Jeans">Jeans</button>
+</div>
+
+  <section>
+    <h4 class="section-subtitle">
+      The Shop
+    </h4>
+    <h2 class="section-title">
+      Best Selling Products
+    </h2>
+    <div class="bestSelling-product">
+        <div class="bs-card" data-menu="TShirts" pdt-id="1" style="display: block;">
+          <div class="bs-card-img" data-img="shirt1.png" id="bs-img-1"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Black T-shirts</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">levis</span>
+              <span class="bs-card-brewery para-font">all sizes</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $50.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="TShirts" pdt-id="2" style="display: block;">
+          <div class="bs-card-img" id="bs-img-2" data-img="shirt2.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">White Tshirt</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Denizen</span>
+              <span class="bs-card-brewery para-font">For mens</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $83.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="TShirts" pdt-id="3" style="display: block;">
+          <div class="bs-card-img" id="bs-img-3" data-img="shirt3.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Summer Collection</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">7 different colors</span>
+              <span class="bs-card-brewery para-font">For Mens</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $24.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+       
+        <div class="bs-card" data-menu="Shirts" pdt-id="4" data-img="shirts2.png" style="display: block;">
+          <div class="bs-card-img" id="bs-img-4"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Shirts 1</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Blue color</span>
+              <span class="bs-card-brewery para-font">Pure cotton</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $30.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="hoddies" pdt-id="5" style="display: block;">
+          <div class="bs-card-img" id="bs-img-5" data-img="hoodie.png" ></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Hoddie#1</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Winter collection</span>
+              <span class="bs-card-brewery para-font">For mens and women</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $47.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="hoddies" pdt-id="6"  style="display: block;">
+          <div class="bs-card-img" id="bs-img-6" data-img="hoodie4.png" ></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Mens Wear</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Winter collection</span>
+              <span class="bs-card-brewery para-font">for Mens</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $58.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+    
+      <div class="bs-card" data-menu="Jeans" pdt-id="7" style="display: block;">
+          <div class="bs-card-img" id="bs-img-7" data-img="jeans2.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Jeans</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Jeans for mens</span>
+              <span class="bs-card-brewery para-font">All sizes available</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $58.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="Jeans" pdt-id="8" style="display: block;">
+          <div class="bs-card-img" id="bs-img-8" data-img="jeans3.png" ></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Jeans</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Women collections</span>
+              <span class="bs-card-brewery para-font">All sizes available</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $78.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="Jackets" pdt-id="9" style="display: block;">
+          <div class="bs-card-img" id="bs-img-9" data-img="jacket3.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Jackets</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Winter special</span>
+              <span class="bs-card-brewery para-font">xl , L, sm, xs</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $89.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+   
+      <div class="bs-card" data-menu="Jackets" pdt-id="10" style="display: block;">
+          <div class="bs-card-img" id="bs-img-10" data-img="jacket4.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Leather Jackets</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Winter Special</span>
+              <span class="bs-card-brewery para-font">All sizes available</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $57.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="Jackets" pdt-id="11" style="display: block;">
+          <div class="bs-card-img" id="bs-img-11" data-img="jacket5.png" ></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Blue long coat</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">Winter Collection</span>
+              <span class="bs-card-brewery para-font">All sizes available</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $78.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bs-card" data-menu="Jackets" pdt-id="12" style="display: block;">
+          <div class="bs-card-img" id="bs-img-12" data-img="jacket.png"></div>
+          <div class="bs-card-body">
+            <div class="bs-card-header">
+              <a href="#" class="bs-card-title">Brown leather jackets</a>
+            </div>
+            <div class="bs-product-data">
+              <span class="bs-card-brewery para-font">winter collection</span>
+              <span class="bs-card-brewery para-font">All sizes available</span>
+            </div>
+            <div class="bs-product-footer">
+              <span class="price">
+                $36.50
+              </span>
+              <span class="bs-card-btn">
+                ORDER
+              </span>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+  </section>
+
+  
+  
+  <link rel="stylesheet" href="./css/footer.css">
+ 
+  
+ <!--Ionicons-->
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <!--Google Fonts-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+ <footer>
+     <ul class="icons">
+         <li><a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+     </ul>
+     <ul class="menu">
+             <li><a href="Index.html">Home</a></li>
+             <li><a href="./htmlpages/about.html">About</a></li>
+             <li><a href="./htmlpages/contactus.html">Contact Us</a></li>
+             <li><a href="./htmlpages/cart.html">Cart</a></li>
+     </ul>
+         <div class="footer-copyright">
+             <p>Copyright @ 2022 All Rights Reserved.</p>
+         </div>
+ </footer>
+
+
+<script src="./js/saveitem.js"></script>
+<script src="./js/filter.js"></script>
+
+
+  <script src="./js/slider.js"></script>
+
+</body>
+</html>

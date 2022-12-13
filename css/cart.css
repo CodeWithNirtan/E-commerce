@@ -1,0 +1,16 @@
+.container-cart
+{
+    height: auto;
+    margin-top:100px
+}
+
+
+.section-subtitle, .section-title{
+    text-align: center;
+  }
+  .section-subtitle{
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    
+  }
